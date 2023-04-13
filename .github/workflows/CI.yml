@@ -29,7 +29,7 @@ jobs:
           echo "All the Containers are up and running"
       - name: Test Index Page HTTP Code
         run: > 
-          test=$(curl http://localhost -o /dev/null -s -w '%{http_code}\n');
+          test=$(curl http://localhost:5000 -o /dev/null -s -w '%{http_code}\n');
           expected=200;
           if [[ $test != $expected ]];
           then
